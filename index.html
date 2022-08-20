@@ -12,11 +12,13 @@
             data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
     </div>
     <script type="text/javascript">
-        FB.getLoginStatus(function (response) {
-            if (response.status === 'connected') {
-                console.log(response.authResponse.accessToken);
-            }
-        });
+        window.onload = () => {
+            FB.getLoginStatus(function (response) {
+                if (response.status === 'connected') {
+                    console.log(response.authResponse.accessToken);
+                }
+            });
+        }
     </script>
 </body>
 
