@@ -17,7 +17,7 @@
         (async function () {
             const hash = location.hash.replace('#', '');
             if (!hash) {
-                location.href = 'https://www.facebook.com/v14.0/dialog/oauth?response_type=token&display=popup&client_id=528259645757312&redirect_uri=https://facebook-login-hudsonbsb.vercel.app&auth_type=reauthenticate&auth_nonce=random-nonce&scope=pages_show_list%2Cads_management%2Cbusiness_management%2Cinstagram_basic%2Cinstagram_manage_comments%2Cinstagram_manage_insights%2Cinstagram_content_publish%2Cpages_read_engagement%2Cpages_read_user_content%2Cpages_manage_posts%2Cpages_manage_engagement%2Cpublic_profile';
+                location.href = 'https://www.facebook.com/v14.0/dialog/oauth?response_type=token&display=popup&client_id=528259645757312&redirect_uri=https://facebook-login-hudsonbsb.vercel.app&auth_type=rerequest&auth_nonce=random-nonce&scope=pages_show_list%2Cads_management%2Cbusiness_management%2Cinstagram_basic%2Cinstagram_manage_comments%2Cinstagram_manage_insights%2Cinstagram_content_publish%2Cpages_read_engagement%2Cpages_read_user_content%2Cpages_manage_posts%2Cpages_manage_engagement%2Cpublic_profile';
                 // fetch('http://192.168.15.167:3333/facebook/url-login')
                 //     .then(res => res.json())
                 //     .then(body => {
@@ -31,7 +31,7 @@
                 await fetch('https://spiny-puzzled-umbra.glitch.me/facebook-access', {
                     method: 'POST', headers: { 'Content-Type': 'application/json' }, body: extractDataFromParams(hash)
                 });
-                // window.close();
+                window.close();
             }
         })();
 
