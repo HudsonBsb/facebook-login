@@ -14,13 +14,12 @@
         </div>
     </div> -->
     <script type="text/javascript">
-        (function () {
-            const hash = location.hash.replace('#', '');
-            fetch('http://192.168.15.167:3333/facebook/access-token', {
-                body: extractDataFromParams(hash),
-                headers: { 'Content-Type': 'application/json' }
-            }).catch(() => window.close());
-        })();
+        const hash = location.hash.replace('#', '');
+        fetch('http://192.168.15.167:3333/facebook/access-token', {
+            method: 'POST',
+            body: extractDataFromParams(hash),
+            headers: { 'Content-Type': 'application/json' }
+        });
 
         function extractDataFromParams(query) {
             const data = {};
