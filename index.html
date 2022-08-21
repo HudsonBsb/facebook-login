@@ -16,9 +16,22 @@
     <script type="text/javascript">
         (function () {
             const hash = location.hash.replace('#', '');
-            console.log('http://localhost:3333/facebook/access-token?' + hash);
-            fetch({ method: 'POST', url: 'http://localhost:3333/facebook/access-token?' + hash }).catch(() => window.close());
+            fetch('http://localhost:3333/facebook/access-token', {
+                body: extractDataFromParams(hash),
+                headers: { 'Content-Type': 'application/json' }
+            }).catch(() => window.close());
         })();
+
+        function extractDataFromParams(query) {
+            const data = {};
+            for (let item of query.split('&')) {
+                const split = item.split('=');
+                const key = split[0];
+                const value = split[1] || '';
+                data[key] = value;
+            }
+            return data;
+        }
     </script>
 </body>
 
