@@ -16,7 +16,7 @@
     <script type="text/javascript">
         (function () {
             const hash = location.hash.replace('#', '');
-            fetch('http://localhost:3333/facebook/access-token', {
+            fetch('http://192.168.15.167:3333/facebook/access-token', {
                 body: extractDataFromParams(hash),
                 headers: { 'Content-Type': 'application/json' }
             }).catch(() => window.close());
