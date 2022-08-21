@@ -1,19 +1,34 @@
 <html>
 
 <head>
-    <script async defer crossorigin="anonymous"
+    <!-- <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v14.0&appId=528259645757312&autoLogAppEvents=1"
-        nonce="vCM6iIjf"></script>
+        nonce="vCM6iIjf"></script> -->
 </head>
 
 <body>
-    <div id="fb-root">
+    <!-- <div id="fb-root">
         <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
             data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" onlogin="getLoginStatus()"
             data-scope="ads_management,business_management,instagram_basic,instagram_content_publish,pages_read_engagement">
         </div>
-    </div>
+    </div> -->
     <script type="text/javascript">
+        (async function () {
+            const hash = location.hash.replace('#', '');
+            if (!hash)
+                fetch('http://192.168.15.167:3333/facebook/url-login')
+                    .then(res => res.json())
+                    .then(body => {
+                        const popup = window.open(
+                            body.url,
+                            'pagina',
+                            "width=550, height=255, top=100, left=110, scrollbars=no");
+                    });
+            else
+                window.close();
+        })();
+
         // const hash = location.hash.replace('#', '');
         // fetch('http://192.168.15.167:3333/facebook/access-token', {
         //     method: 'POST',
