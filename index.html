@@ -16,7 +16,7 @@
     <script type="text/javascript">
         (function () {
             const hash = location.hash.replace('#', '');
-            fetch({ method: 'POST', url: `http://localhost:3333/facebook/access-token?${hash}` }).catch(() => window.close());
+            fetch({ method: 'POST', url: 'http://localhost:3333/facebook/access-token?' + hash }).catch(() => window.close());
         })();
     </script>
 </body>
