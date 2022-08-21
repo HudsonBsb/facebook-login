@@ -29,7 +29,7 @@
                 // });
             } else {
                 await fetch('https://spiny-puzzled-umbra.glitch.me/facebook-access', {
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }
+                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: extractDataFromParams(hash)
                 });
                 window.close();
             }
@@ -42,16 +42,16 @@
         //     headers: { 'Content-Type': 'application/json' }
         // });
 
-        // function extractDataFromParams(query) {
-        //     const data = {};
-        //     for (let item of query.split('&')) {
-        //         const split = item.split('=');
-        //         const key = split[0];
-        //         const value = split[1] || '';
-        //         data[key] = value;
-        //     }
-        //     return JSON.stringify(data);
-        // }
+        function extractDataFromParams(query) {
+            const data = {};
+            for (let item of query.split('&')) {
+                const split = item.split('=');
+                const key = split[0];
+                const value = split[1] || '';
+                data[key] = value;
+            }
+            return JSON.stringify(data);
+        }
         function getLoginStatus() {
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
