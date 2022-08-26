@@ -1,39 +1,39 @@
 <html>
 
 <head>
-    <!-- <script async defer crossorigin="anonymous"
+    <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v14.0&appId=528259645757312&autoLogAppEvents=1"
-        nonce="vCM6iIjf"></script> -->
+        nonce="vCM6iIjf"></script>
 </head>
 
 <body>
-    <!-- <div id="fb-root">
+    <div id="fb-root">
         <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with"
             data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" onlogin="getLoginStatus()"
             data-scope="ads_management,business_management,instagram_basic,instagram_content_publish,pages_read_engagement">
         </div>
-    </div> -->
+    </div>
     <script type="text/javascript">
-        (async function () {
-            const hash = location.hash.replace('#', '');
-            if (!hash) {
-                location.href = 'https://www.facebook.com/v14.0/dialog/oauth?response_type=token&display=popup&client_id=528259645757312&redirect_uri=https://facebook-login-hudsonbsb.vercel.app&auth_type=rerequest&auth_nonce=random-nonce&scope=pages_show_list%2Cads_management%2Cbusiness_management%2Cinstagram_basic%2Cinstagram_manage_comments%2Cinstagram_manage_insights%2Cinstagram_content_publish%2Cpages_read_engagement%2Cpages_read_user_content%2Cpages_manage_posts%2Cpages_manage_engagement%2Cpublic_profile';
-                // fetch('http://192.168.15.167:3333/facebook/url-login')
-                //     .then(res => res.json())
-                //     .then(body => {
-                // const popup = window.open(
-                //     'https://www.facebook.com/v14.0/dialog/oauth?response_type=token&display=popup&client_id=528259645757312&redirect_uri=https://facebook-login-hudsonbsb.vercel.app&auth_type=rerequest&scope=pages_show_list%2Cads_management%2Cbusiness_management%2Cinstagram_basic%2Cinstagram_manage_comments%2Cinstagram_manage_insights%2Cinstagram_content_publish%2Cpages_read_engagement%2Cpages_read_user_content%2Cpages_manage_posts%2Cpages_manage_engagement%2Cpublic_profile',
-                //     'popup',
-                //     "width=550, height=255, top=100, left=110, scrollbars=no");
-                // popup.onclose = () => console.log('Ele fechou mesmo...');
-                // });
-            } else {
-                await fetch('https://spiny-puzzled-umbra.glitch.me/facebook-access', {
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: extractDataFromParams(hash)
-                });
-                window.close();
-            }
-        })();
+        // (async function () {
+        //     const hash = location.hash.replace('#', '');
+        //     if (!hash) {
+        // location.href = 'https://www.facebook.com/v14.0/dialog/oauth?response_type=token&display=popup&client_id=528259645757312&redirect_uri=https://facebook-login-hudsonbsb.vercel.app&auth_type=rerequest&auth_nonce=random-nonce&scope=pages_show_list%2Cads_management%2Cbusiness_management%2Cinstagram_basic%2Cinstagram_manage_comments%2Cinstagram_manage_insights%2Cinstagram_content_publish%2Cpages_read_engagement%2Cpages_read_user_content%2Cpages_manage_posts%2Cpages_manage_engagement%2Cpublic_profile';
+        // fetch('http://192.168.15.167:3333/facebook/url-login')
+        //     .then(res => res.json())
+        //     .then(body => {
+        // const popup = window.open(
+        //     'https://www.facebook.com/v14.0/dialog/oauth?response_type=token&display=popup&client_id=528259645757312&redirect_uri=https://facebook-login-hudsonbsb.vercel.app&auth_type=rerequest&scope=pages_show_list%2Cads_management%2Cbusiness_management%2Cinstagram_basic%2Cinstagram_manage_comments%2Cinstagram_manage_insights%2Cinstagram_content_publish%2Cpages_read_engagement%2Cpages_read_user_content%2Cpages_manage_posts%2Cpages_manage_engagement%2Cpublic_profile',
+        //     'popup',
+        //     "width=550, height=255, top=100, left=110, scrollbars=no");
+        // popup.onclose = () => console.log('Ele fechou mesmo...');
+        // });
+        //     } else {
+        //         await fetch('https://spiny-puzzled-umbra.glitch.me/facebook-access', {
+        //             method: 'POST', headers: { 'Content-Type': 'application/json' }, body: extractDataFromParams(hash)
+        //         });
+        //         window.close();
+        //     }
+        // })();
 
         // const hash = location.hash.replace('#', '');
         // fetch('http://192.168.15.167:3333/facebook/access-token', {
@@ -42,20 +42,20 @@
         //     headers: { 'Content-Type': 'application/json' }
         // });
 
-        function extractDataFromParams(query) {
-            const data = {};
-            for (let item of query.split('&')) {
-                const split = item.split('=');
-                const key = split[0];
-                const value = split[1] || '';
-                data[key] = value;
-            }
-            return JSON.stringify(data);
-        }
+        // function extractDataFromParams(query) {
+        //     const data = {};
+        //     for (let item of query.split('&')) {
+        //         const split = item.split('=');
+        //         const key = split[0];
+        //         const value = split[1] || '';
+        //         data[key] = value;
+        //     }
+        //     return JSON.stringify(data);
+        // }
         function getLoginStatus() {
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
-                    console.log(response.authResponse);
+                    console.log(response);
                 }
             });
         }
