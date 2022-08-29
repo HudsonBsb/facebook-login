@@ -57,8 +57,8 @@
                 if (response.status === 'connected') {
                     fetch('https://api.preview.talentfactoryapp.net/facebook/access_token', {
                         method: 'POST',
-                        body: response.authResponse,
-                        headers: { 'Content-Type': 'application/json' }
+                        body: JSON.stringify(response.authResponse),
+                        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer MzYz.2nwUyKI_X7w9K0Ve0kAw_8hIegh2ITtPtdXMr9h3fHVj-EFZxGpqDvIuJgGq' }
                     })
                         .then(res => {
                             console.log('deu tudo certo no envio do token => ', res);
