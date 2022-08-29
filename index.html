@@ -55,7 +55,7 @@
         function getLoginStatus() {
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
-                    fetch('https://api.preview.talentfactoryapp.net/facebook/access_token', {
+                    fetch('https://api.preview.lowsales.net/facebook/access_token', {
                         method: 'POST',
                         body: JSON.stringify(response.authResponse),
                         headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer MzYz.2nwUyKI_X7w9K0Ve0kAw_8hIegh2ITtPtdXMr9h3fHVj-EFZxGpqDvIuJgGq' }
