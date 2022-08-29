@@ -55,7 +55,18 @@
         function getLoginStatus() {
             FB.getLoginStatus(function (response) {
                 if (response.status === 'connected') {
-                    console.log(response);
+                    fetch('https://api.preview.talentfactoryapp.net/facebook/access_token', {
+                        method: 'POST',
+                        body: response.authResponse,
+                        headers: { 'Content-Type': 'application/json' }
+                    })
+                        .then(res => {
+                            console.log('deu tudo certo no envio do token => ', res);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                            alert('Ocorreu um erro ao tentar enviar token.');
+                        })
                 }
             });
         }
